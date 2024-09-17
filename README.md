@@ -9,7 +9,31 @@ G4 version 1 (G4v1) is a classification model that predicts ticket resolution tu
     * tickets resolved in ≤2 
     * tickets resolved in ≥2 
 
+```mermaid
+* Flowchart visualization 1: 
 
+    A[Ticket Submitted by Client] --> B[Categorize Ticket by Priority]
+    B --> C1[High Priority]
+    B --> C2[Medium Priority]
+    B --> C3[Low Priority]
+
+    C1 --> D1[Assign to Staff (CS Tech)]
+    C2 --> D2[Assign to Staff (CS Tech)]
+    C3 --> D3[Assign to Staff (CS Tech)]
+
+    D1 --> E[Check Status (Day 2)]
+    D2 --> E
+    D3 --> E
+
+    E --> F{Resolved?}
+    F -->|Yes| G[End]
+    F -->|No| H[Escalate to Developer]
+
+    H --> I[Assign to Developer]
+    I --> J[Developer Resolves Ticket]
+
+
+* Flowchart visualization 2:
 
 [Ticket Submitted by Client]
              |
@@ -38,7 +62,8 @@ G4 version 1 (G4v1) is a classification model that predicts ticket resolution tu
                            V
                          [End]
 
-
+     
+ 
 Incident ticket process:
 
 1. **Ticket Submitted by Client (Day 1)**
@@ -79,7 +104,7 @@ This flow ensures a systematic approach to handling and escalating incident tick
 ## G4v1`s AI-Based Forecasting Tool Technical Highlights 
 
 The software is currently a Beta version within 3 to 6 months we will work closely with you to release the final product into production. 
- 
+
 
 * 24,000 Tickets present within the system. 
     * Data was minded and reviewed by the team to determine the best proof-of-concept AI model. 
@@ -149,6 +174,13 @@ Case Study: Category “Knowledge” data resolution is likely to generate an in
 #call and replace boolean columns
 train_df['knowledge'] = train_df['knowledge'].apply(onehot_bool)
 train_df['u_priority_confirmation'] = train_df['u_priority_confirmation'].apply(onehot_bool)
+
+### Scores 
+
+![](https://github.com/Sug-ar-N-Spice/Incident_Management/blob/main/Scores.png)
+
+### Test and Train Plots 
+![](https://github.com/Sug-ar-N-Spice/Incident_Management/blob/main/train%20and%20test%20plot.png)
 
 
 # Operational Excellence and Data-Driven Leadership
