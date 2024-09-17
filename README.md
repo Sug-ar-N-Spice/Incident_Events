@@ -9,7 +9,7 @@ G4 version 1 (G4v1) is a classification model that predicts ticket resolution tu
     * tickets resolved in ≤2 
     * tickets resolved in ≥2 
 
-```mermaid
+
 * Flowchart visualization 1: 
 
     A[Ticket Submitted by Client] --> B[Categorize Ticket by Priority]
